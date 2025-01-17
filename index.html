@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-list {
+            margin: 20px 0;
+        }
+
+        .group {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .group:hover {
+            background-color: #eef9ee;
+            border-color: #4CAF50;
+        }
+
+        .delete-button {
+            padding: 5px 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .delete-button:hover {
+            background-color: #e60000;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Groups Page</div>
+    <div class="container">
+        <h2>Your Groups</h2>
+        <div class="group-list" id="group-list">
+            <!-- Dynamic list of groups will appear here -->
+        </div>
+        <h3>Create a New Group</h3>
+        <form id="group-form">
+            <input type="text" id="group-name" placeholder="Enter group name" required>
+            <button type="submit">Create Group</button>
+        </form>
+    </div>
+
+    <script>
+        const groupList = document.getElementById('group-list');
+        const groupForm = document.getElementById('group-form');
+
+        // Sample data for groups
+        let groups = ["Study Buddies", "Project Team", "Book Club"];
+
+        // Function to display groups
+        function displayGroups() {
+            groupList.innerHTML = '';
+            groups.forEach((group, index) => {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'group';
+
+                const groupName = document.createElement('span');
+                groupName.textContent = group;
+                groupDiv.appendChild(groupName);
+
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-button';
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => deleteGroup(index));
+                groupDiv.appendChild(deleteButton);
+
+                groupList.appendChild(groupDiv);
+            });
+        }
+
+        // Add group from form submission
+        groupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const groupName = document.getElementById('group-name').value;
+            if (groupName) {
+                groups.push(groupName);
+                document.getElementById('group-name').value = '';
+                displayGroups();
+            }
+        });
+
+        // Delete group
+        function deleteGroup(index) {
+            groups.splice(index, 1);
+            displayGroups();
+        }
+
+        // Initial display of groups
+        displayGroups();
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid #4CAF50;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .info {
+            margin: 20px 0;
+        }
+
+        .info label {
+            font-weight: bold;
+        }
+
+        .info p {
+            margin: 5px 0 15px;
+            color: #555;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .edit-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .edit-section input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .edit-section button {
+            background-color: #2196F3;
+        }
+
+        .edit-section button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Profile Page</div>
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+        <h2 id="name-display">Random Name</h2>
+        <div class="info">
+            <label>Email:</label>
+            <p id="email-display">johndoe@example.com</p>
+            <label>Phone:</label>
+            <p id="phone-display">+91 9876543211</p>
+            <label>Address:</label>
+            <p id="address-display">123 Main St, City, Country</p>
+        </div>
+        <button id="edit-button">Edit Profile</button>
+
+        <div class="edit-section" id="edit-section">
+            <input type="text" id="name-input" placeholder="Enter new name">
+            <input type="email" id="email-input" placeholder="Enter new email">
+            <input type="tel" id="phone-input" placeholder="Enter new phone">
+            <input type="text" id="address-input" placeholder="Enter new address">
+            <button id="save-button">Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        const editButton = document.getElementById('edit-button');
+        const editSection = document.getElementById('edit-section');
+        const saveButton = document.getElementById('save-button');
+
+        const nameDisplay = document.getElementById('name-display');
+        const emailDisplay = document.getElementById('email-display');
+        const phoneDisplay = document.getElementById('phone-display');
+        const addressDisplay = document.getElementById('address-display');
+
+        const nameInput = document.getElementById('name-input');
+        const emailInput = document.getElementById('email-input');
+        const phoneInput = document.getElementById('phone-input');
+        const addressInput = document.getElementById('address-input');
+
+        editButton.addEventListener('click', () => {
+            editSection.style.display = 'block';
+            nameInput.value = nameDisplay.textContent;
+            emailInput.value = emailDisplay.textContent;
+            phoneInput.value = phoneDisplay.textContent;
+            addressInput.value = addressDisplay.textContent;
+        });
+
+        saveButton.addEventListener('click', () => {
+            nameDisplay.textContent = nameInput.value;
+            emailDisplay.textContent = emailInput.value;
+            phoneDisplay.textContent = phoneInput.value;
+            addressDisplay.textContent = addressInput.value;
+            editSection.style.display = 'none';
+        });
+    </script>
+    <a href="index.html"> GROUPS</a>
+</body>
+</html>

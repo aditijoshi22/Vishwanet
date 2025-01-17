@@ -1,0 +1,50 @@
+/* Groups Page */
+.groups-page {
+  text-align: center;
+  background-color: rgba(232, 228, 234, 0.9);
+  padding: 100px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  margin-top: 50px;
+  color: #333;
+}
+#bg{
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+
+#groups-list {
+  margin-top: 20px;
+}
+
+.group-card {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+.group-card h3 {
+  margin: 0;
+}
+
+.group-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.group-card button:hover {
+  background-color: #218838;
+}

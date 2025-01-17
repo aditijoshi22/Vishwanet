@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groups Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body background="https://tse2.mm.bing.net/th?id=OIP.h_NFzpTvzoU3lEK0QSsnnwHaFj&pid=Api&P=0&h=220" 
+ id="bg">
+  <div class="groups-page">
+    <h1>Groups</h1>
+    <div id="groups-list">
+      <!-- Group Cards will be injected here -->
+    </div>
+    <button id="create-group">Create Group</button>
+    <form id="group-form" style="display: none;">
+      <input type="text" id="group-name" placeholder="Group Name" required>
+      <textarea id="group-description" placeholder="Group Description"></textarea>
+      <button type="submit">Add Group</button>
+    </form>
+  </div>
+  <script src="groups.js"></script>
+</body>
+</html>

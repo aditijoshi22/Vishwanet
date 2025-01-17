@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            height: 300px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .chat-input {
+            display: flex;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="group-name-header">Group Chat</div>
+    <div class="container">
+        <div id="group-chat-title" style="text-align: center; margin-bottom: 15px;"></div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Get the group name from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const groupName = urlParams.get('group');
+
+        // Display the group name
+        const groupChatTitle = document.getElementById('group-chat-title');
+        groupChatTitle.textContent = `Welcome to the "${groupName}" chat`;
+
+        // Chat functionality
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = message;
+                chatBox.appendChild(messageElement);
+                chatInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
