@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishwanet</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fbf7f7;
+      color: #333;
+    }
+
+    header {
+      background-color:  #f7f9f9; /* Green for energy and vibrance */
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: rgb(31, 27, 27);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .banner {
+      text-align: center;
+      padding: 250px 0;
+      background: url('pexels-felixmittermeier-956999.jpg') ;/* Gradient for creativity */
+      color: white;
+    }
+
+    .banner h1 {
+      margin: 0;
+      font-size: 36px;
+      text-shadow: 2px 2px 4px rgba(245, 245, 245, 0.3);
+    }
+
+    /* Profile Section */
+    .profile-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 60px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin: 20px;
+    }
+
+    .profile-info {
+      line-height: 1.8;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .profile-right {
+      text-align: right;
+    }
+
+    .profile-right img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid #4CAF50; /* Matches header color */
+    }
+
+    .followers {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    /* Community Section */
+    .community {
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .community h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #1f271f;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Three items per row */
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .community-item {
+      height: 120px;
+      background: linear-gradient(135deg, #2a2422, #46433b); /* Gradient for energy */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .community-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #0d0f0d;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Vishwanet</strong></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Community</a>
+    <a href="#">Chat</a>
+    <a href="#">Find New People</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h1>WELCOME TO VISHWANET !!</h1>
+</div>
+
+<div class="profile-section">
+  <div class="profile-info">
+    <p><strong>NAME:</strong> randomName</p>
+    <p><strong>CLASS:</strong> CS-E</p>
+    <p><strong>YEAR:</strong> 1ST YEAR</p>
+    <p><strong>NATIVE:</strong> PUNE</p>
+    <p><strong>HOBBIES:</strong> COMICS, SPACE SHOWS, DRAWING, CRICKET</p>
+    <p><strong>ABOUT:</strong> BETA MILLIONAIRE</p>
+  </div>
+  <div class="profile-right">
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="Profile Picture">
+    <div class="followers">
+      <p>100 Followers | 200 Following</p>
+    </div>
+  </div>
+</div>
+
+<div class="community">
+  <h2>Community</h2>
+  <div class="community-grid">
+    <div class="community-item">Community 1</div>
+    <div class="community-item">Community 2</div>
+    <div class="community-item">Community 3</div>
+    <div class="community-item">Community 4</div>
+    <div class="community-item">Community 5</div>
+    <div class="community-item">Community 6</div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Vishwanet. All rights reserved.
+</footer>
+
+</body>
+</html>
